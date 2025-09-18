@@ -56,7 +56,7 @@ const easy   = document.querySelector('.easy');
 
 const simpleMob = document.querySelector('.simple-mob');
 const speedMob  = document.querySelector('.speed-mob');
-const easyMob  = document.querySelector('.easy.mob');
+const easyMob  = document.querySelector('.easy-mob');
 
 const simpleBtn = document.querySelector('.simplebtn');
 const speedBtn = document.querySelector('.speedbtn');
@@ -79,6 +79,7 @@ function reset() {
   tab3.style.display = 'none';
 }
 
+
 simple.addEventListener('click', () => {
   reset();
   simple.classList.add('active');
@@ -94,6 +95,40 @@ speed.addEventListener('click', () => {
 easy.addEventListener('click', () => {
   reset();
   easy.classList.add('active');
+  tab3.style.display = 'block';
+});
+
+
+// mobile design
+
+function resetMobile () {
+  simpleMob.classList.remove('active');
+  speedMob.classList.remove('active');
+  easyMob.classList.remove('active');
+
+  tab1.style.display = 'none';
+  tab2.style.display = 'none';
+  tab3.style.display = 'none';
+}
+
+
+simpleBtn.addEventListener('click', () => {
+  resetMobile();
+  simpleMob.classList.add('active');
+  tab1.style.display = 'block';
+});
+
+
+speedBtn.addEventListener('click', () => {
+  resetMobile();
+  speedMob.classList.add('active');
+  tab2.style.display = 'block';
+});
+
+
+easyBtn.addEventListener('click', () => {
+  resetMobile();
+  easyMob.classList.add('active');
   tab3.style.display = 'block';
 });
 

@@ -826,7 +826,15 @@ footer {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 70%;
+        border-bottom: 1px solid var(--Blue-950);
         
+    }
+
+    .sec1-rows-mobile button {
+        padding: 0 0;
+        width: 100%;
+        border-top: 1px solid var(--Blue-950);
     }
 
 
@@ -836,20 +844,23 @@ footer {
 
 
     .span-mobile  {
-        padding: 6px 0px ;
+        padding: 10px 0px ;
         color: var(--Grey-100);
         font-size: 14px;
         cursor: pointer;  
         text-align: center;
+        width: 50%;
+        margin: 0 auto;
     }
 
 
 
     .span-mobile:hover {
         color: var(--Blue-950);
+        /* border-bottom: 3px solid var(--Red-400);   */
     }
     
-    .span-mobile p.active {
+    .span-mobile.active {
         border-bottom: 3px solid var(--Red-400);      
     }
 
