@@ -173,14 +173,25 @@ faqQuestionAns.forEach((faq) => {
 
 let emailInput = document.querySelector('.input')
 let inputGroup = document.querySelector('.input-group')
+let errorMessage = document.querySelector('.error-message')
 
-emailInput.addEventListener('blur', () => {
+const displayError = (message) => {
+  errorMessage.textContent = message;
+}
+
+emailInput.addEventListener('focus', () => {
   let emailValue = emailInput.value.trim();
   let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/;
 
-  if (!emailPattern.test(emailValue) &&  emailValue !== ""){
+  if (emailValue === "") {
+    displayError("Email is required");
+    inputGroup.classList.add('active');
+  } 
+  else if (!emailPattern.test(emailValue) ){
+    displayError("Input an invalid email address");
     inputGroup.classList.add('active')
-  }else {
+  }
+  else {
     inputGroup.classList.remove('active')
   }
 } )
