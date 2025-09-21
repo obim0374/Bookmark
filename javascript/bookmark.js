@@ -133,3 +133,70 @@ easyBtn.addEventListener('click', () => {
 });
 
 
+
+// faq js
+
+let faqQuestionAns = document.querySelectorAll('.faq-ques-ans');
+let arrow = document.getElementById ('arrow')
+
+faqQuestionAns.forEach((faq) => {
+  const question = faq.querySelector('.faq-ques')
+  const answer = faq.querySelector('.faq-ans')
+
+
+  answer.style.display = 'none'
+   
+  question.addEventListener('click', () => {
+    let isActive = question.classList.contains('active');
+
+    faqQuestionAns.forEach((item) => {
+      const ques = item.querySelector('.faq-ques');
+      const ans = item.querySelector('.faq-ans');
+  
+
+      ques.classList.remove('active')
+      ans.style.display = 'none'
+
+    })
+
+    if(!isActive){
+      question.classList.add('active')
+      answer.style.display = 'block'
+    }
+  })
+})
+
+
+
+// input js
+
+let emailInput = document.querySelector('.input')
+let inputGroup = document.querySelector('.input-group')
+
+emailInput.addEventListener('blur', () => {
+  let emailValue = emailInput.value.trim();
+  let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/;
+
+  if (!emailPattern.test(emailValue) &&  emailValue !== ""){
+    inputGroup.classList.add('active')
+  }else {
+    inputGroup.classList.remove('active')
+  }
+} )
+
+//  mobile nav js
+const desktopNav = document.querySelector('.desktop-nav');
+const mobileNav = document.querySelector('.mobile-nav');
+const hamburger = document.querySelector('.hamburger');
+const closeBtn = document.querySelector('.close');
+
+hamburger.addEventListener('click', () => {
+  mobileNav.classList.add('active');
+  // mobileNav.style.transition = '0.3s all ease-in-out';
+  desktopNav.style.display = 'none';
+})
+
+closeBtn.addEventListener('click', () => {
+  mobileNav.classList.remove('active');
+  desktopNav.style.display = 'flex';
+})
