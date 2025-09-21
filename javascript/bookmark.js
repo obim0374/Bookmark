@@ -54,15 +54,6 @@ const simple = document.querySelector('.simple');
 const speed  = document.querySelector('.speed');
 const easy   = document.querySelector('.easy');
 
-const simpleMob = document.querySelector('.simple-mob');
-const speedMob  = document.querySelector('.speed-mob');
-const easyMob  = document.querySelector('.easy-mob');
-
-const simpleBtn = document.querySelector('.simplebtn');
-const speedBtn = document.querySelector('.speedbtn');
-const easyBtn  = document.querySelector('.easybtn');
-
-
 
 const tab1 = document.getElementById('tab1');
 const tab2 = document.getElementById('tab2');
@@ -99,7 +90,17 @@ easy.addEventListener('click', () => {
 });
 
 
-// mobile design
+// mobile design js
+
+
+const simpleMob = document.querySelector('.simple-mob');
+const speedMob  = document.querySelector('.speed-mob');
+const easyMob  = document.querySelector('.easy-mob');
+
+const simpleBtn = document.querySelector('.simplebtn');
+const speedBtn = document.querySelector('.speedbtn');
+const easyBtn  = document.querySelector('.easybtn');
+
 
 function resetMobile () {
   simpleMob.classList.remove('active');
@@ -134,7 +135,7 @@ easyBtn.addEventListener('click', () => {
 
 
 
-// faq js
+// faq js  for both  desktop and mobile
 
 let faqQuestionAns = document.querySelectorAll('.faq-ques-ans');
 let arrow = document.getElementById ('arrow')
@@ -168,7 +169,7 @@ faqQuestionAns.forEach((faq) => {
 
 
 
-// input js
+// input js for both desktop and mobile
 
 let emailInput = document.querySelector('.input')
 let inputGroup = document.querySelector('.input-group')
